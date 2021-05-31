@@ -75,7 +75,7 @@ RUN tar -zxf /opt/elasticsearch.tar.gz --strip-components=1
 
 # The distribution includes a `config` directory, no need to create it
 COPY ${config_dir}/elasticsearch.yml config/
-COPY ${config_dir}/log4j2.properties config/log4j2.docker.properties
+COPY ${config_dir}/${docker_base == 'oss' ? 'oss/' : ''}log4j2.properties config/log4j2.docker.properties
 
 # 1. Configure the distribution for Docker
 # 2. Ensure directories are created. Most already are, but make sure

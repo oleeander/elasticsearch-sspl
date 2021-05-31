@@ -14,6 +14,8 @@ package org.elasticsearch.gradle;
 public enum DockerBase {
     CENTOS("centos:8", ""),
 
+    OSS("centos:8", "-oss"),
+
     // "latest" here is intentional, since the image name specifies "8"
     UBI("docker.elastic.co/ubi8/ubi-minimal:latest", "-ubi8"),
 
